@@ -458,6 +458,7 @@ ul {
 
 .portfolio .shuffle ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -465,6 +466,12 @@ ul {
   padding: 10px 20px;
   text-transform: uppercase;
   margin-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+  .portfolio .shuffle ul li {
+    padding: 10px;
+  }
 }
 
 .portfolio .shuffle ul li.active {
@@ -1061,6 +1068,7 @@ button.btn-video a {
   padding: 10px 20px;
   background-color: white;
   border: 1px solid var(--main-color);
+  cursor: pointer;
 }
 
 .pricing .container > p {
@@ -1076,6 +1084,7 @@ button.btn-video a {
   background-color: var(--main-color);
   color: white;
   border: none;
+  cursor: pointer;
 }
 /* End Pricing */
 /* Start Mail */
@@ -1130,6 +1139,7 @@ button.btn-video a {
   padding: 20px 60px;
   font-size: 14px;
   color: #fff;
+  caret-color: var(--main-color);
 }
 
 .mail .container .form::before {
@@ -1155,7 +1165,12 @@ button.btn-video a {
   position: absolute;
   right: 2px;
   top: 2px;
-  z-index: -1;
+  cursor: pointer;
+  height: calc(100% - 4px);
+}
+
+.mail .form ::placeholder {
+  color: white;
 }
 
 .mail .container p {
@@ -1214,6 +1229,16 @@ button.btn-video a {
   padding: 20px;
   font-size: 14px;
   width: 100%;
+  caret-color: var(--main-color);
+}
+
+.contacts .form-contacts input::placeholder,
+.contacts textarea::placeholder {
+  color: black;
+}
+
+.contacts textarea {
+  height: 400px;
 }
 
 .contacts .text {
@@ -1266,14 +1291,15 @@ button.btn-video a {
   padding: 25px 60px !important;
   outline: none;
   border: none;
+  cursor: pointer;
   text-transform: uppercase;
   margin-bottom: 0 !important;
 }
 /* End Contacts */
 /* Start Footer */
 .footer {
-  padding-top: var(--section-padding);
-  padding-bottom: 40px;
+  padding-top: calc(var(--section-padding) / 2);
+  padding-bottom: calc(var(--section-padding) / 2);
   background-image: url(../images/bk.jpg);
   background-size: cover;
   color: white;
@@ -1322,4 +1348,9 @@ button.btn-video a {
 .footer .container > p {
   font-size: 14px;
 }
+
+.footer .copyright span {
+  font-weight: bold;
+  color: var(--main-color);
+} 
 /* End Footer */
